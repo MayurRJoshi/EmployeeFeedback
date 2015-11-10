@@ -8,6 +8,6 @@ var collection;
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', lib.connectToDatabase);
+router.get('/', lib.connectToDatabase , lib.connectToCollection , lib.insertToCollection);
 
 module.exports = router;
