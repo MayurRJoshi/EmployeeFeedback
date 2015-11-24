@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "~4.13.1",
     "mongodb" : "~2.0.48",
-    "scribe-js" : "2.0.4"
+    "scribe-js" : "2.0.4",
+    "http-auth" : "2.2.8"
   }
 }

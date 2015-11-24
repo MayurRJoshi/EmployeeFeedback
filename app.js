@@ -3,6 +3,8 @@ var scribe = require('scribe-js')();
 var routes = require('./routes/index');
 var auth = require('http-auth');
 
+process.env.TZ = 'Asia/Kolkata';
+
 var app = express();
 var basic = auth.basic({
 	realm : 'Scribe log webpanel',
