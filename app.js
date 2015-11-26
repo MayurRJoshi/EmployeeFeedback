@@ -15,7 +15,7 @@ setInterval(function (){
 	https.get('https://whispering-mesa-8158.herokuapp.com/ping' , function(){
 		console.tag('Ping').log('Success');
 	})
-} , 104400000);
+} , 10000);
 
 app.use(scribe.express.logger());
 app.use('/logs' , auth.connect(basic) , scribe.webPanel());
