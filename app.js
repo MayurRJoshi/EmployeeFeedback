@@ -4,6 +4,7 @@ var console = process.console;
 var routes = require('./routes/index');
 var cron = require('./routes/cron');
 var auth = require('http-auth');
+var https = require('https');
 
 var app = express();
 var basic = auth.basic({
@@ -13,12 +14,12 @@ var basic = auth.basic({
 
 cron.job;
 
-/*var https = require('https');
-setInterval(function (){
-	https.get('https://whispering-mesa-8158.herokuapp.com/ping' , function(){
-		console.tag('Ping').log('Success');
+app.locals.intervalId = setInterval(ping , 1740000);
+function ping(){
+		https.get('https://whispering-mesa-8158.herokuapp.com/ping' , function(){
+		console.tag('Ping').log('Success ');
 	})
-} , 1200000);*/
+};
 
 app.use(scribe.express.logger());
 app.use('/logs' , auth.connect(basic) , scribe.webPanel());
